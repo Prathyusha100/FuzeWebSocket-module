@@ -15,11 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fuze.po.PurchaseOrderAppServices.forms.PORequestForm;
-import com.fuze.po.PurchaseOrderAppServices.info.PORequestInfo;
-import com.fuze.po.PurchaseOrderAppServices.info.ResponseInfo;
-import com.fuze.po.PurchaseOrderAppServices.service.POService;
-
 @RestController
 @RequestMapping("/RePO")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
