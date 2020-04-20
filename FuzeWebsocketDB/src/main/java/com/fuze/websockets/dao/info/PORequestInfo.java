@@ -1,4 +1,4 @@
-package com.fuze.po.PurchaseOrderAppServices.info;
+package com.fuze.websockets.dao.info;
 
 import java.util.Set;
 

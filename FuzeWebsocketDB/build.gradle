@@ -9,7 +9,7 @@ war {
 	archiveName 'FuzeWebsocketDB'
     }
 
-group = 'com.fuze.po'
+group = 'com.fuze.websocket'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
@@ -21,11 +21,10 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.2.4.RELEASE'
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.2.4.RELEASE'
-	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.19'
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web-services', version: '1.4.0.RELEASE'
 	compile group: 'org.springframework', name: 'spring-oxm', version: '5.2.3.RELEASE'
-	
-	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+    compile "com.oracle.ojdbc:ojdbc8:19.3.0.0"
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
 	compile group: 'commons-io', name: 'commons-io', version: '2.6'
 	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.0.2'
 	compile group: 'org.apache.poi', name: 'poi', version: '4.1.2'

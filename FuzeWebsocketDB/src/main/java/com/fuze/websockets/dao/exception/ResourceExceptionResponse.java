@@ -1,4 +1,4 @@
-package com.fuze.po.PurchaseOrderAppServices.exception;
+package com.fuze.websockets.dao.exception;
 
 import java.util.Date;
 

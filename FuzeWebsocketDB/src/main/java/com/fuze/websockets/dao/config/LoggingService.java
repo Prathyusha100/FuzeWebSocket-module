@@ -1,4 +1,4 @@
-package com.fuze.po.PurchaseOrderAppServices.config;
+package com.fuze.websockets.dao.config;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

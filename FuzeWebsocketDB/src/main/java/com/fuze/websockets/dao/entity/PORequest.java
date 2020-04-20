@@ -1,4 +1,4 @@
-package com.fuze.po.PurchaseOrderAppServices.entity;
+package com.fuze.websockets.dao.entity;
 
 import java.util.Set;
 

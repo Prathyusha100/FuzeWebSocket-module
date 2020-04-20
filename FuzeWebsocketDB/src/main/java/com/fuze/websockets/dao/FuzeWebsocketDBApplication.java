@@ -1,4 +1,4 @@
-package com.fuze.po.PurchaseOrderAppServices;
+package com.fuze.websockets.dao;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,11 +19,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 //@EntityScan(basePackages = { "com.fuze.po.PurchaseOrderAppServices.entity" })
 //@EnableSwagger2
-public class PurchaseOrderServicesApplication extends SpringBootServletInitializer {
+public class FuzeWebsocketDBApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PurchaseOrderServicesApplication.class, args);
-		System.out.println("PO Service Started");
+		SpringApplication.run(FuzeWebsocketDBApplication.class, args);
+		System.out.println("FuzeWebsocketDBApplication Service Started");
 	}
 
 	
