@@ -8,6 +8,7 @@ public class PORequestForm {
 	private String pslc;
 	private String siteTracker;
 	private String poStatus;
+	private Integer id;
 
 	public String getPoName() {
 		return poName;
@@ -55,6 +56,14 @@ public class PORequestForm {
 
 	public void setPoStatus(String poStatus) {
 		this.poStatus = poStatus;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 }

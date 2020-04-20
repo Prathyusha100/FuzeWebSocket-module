@@ -32,7 +32,7 @@ public class POService {
 		} catch (Exception e) {
 			response.setStatus(false);
 		}
-		response.setResponseType("PO has been created successfuly");
+		response.setResponseType("PO has been saved successfuly");
 		response.setStatus(true);
 		return response;
 	}
@@ -45,6 +45,9 @@ public class POService {
 		poRequest.setSiteTracker(requestForm.getSiteTracker());
 		poRequest.setTeritory(requestForm.getTeritory());
 		poRequest.setPoName(requestForm.getPoName());
+		if(requestForm.getId()!=null) {
+			poRequest.setId(requestForm.getId());
+		}
 		return poRequest;
 	}
 
