@@ -19,11 +19,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 //@EntityScan(basePackages = { "com.fuze.po.PurchaseOrderAppServices.entity" })
 //@EnableSwagger2
-public class FuzeWebsocketDBApplication extends SpringBootServletInitializer {
+public class FuzeWebsocketDAOApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FuzeWebsocketDBApplication.class, args);
-		System.out.println("FuzeWebsocketDBApplication Service Started");
+		SpringApplication.run(FuzeWebsocketDAOApplication.class, args);
+		System.out.println("FuzeWebsocketDAOApplication Service Started");
 	}
 
 	

@@ -46,6 +46,8 @@ public class PORequest {
 	@Column(name = "last_modified_date")
 	private Date lastModifiedDate;
 	
+	public PORequest() {}
+	
 	public PORequest(int siteId, String poName, String pslc, String poStatus, String territory, String market,
 			String siteTracker, String lastModifiedBy, Date lastModifiedDate) {
 		super();
