@@ -6,7 +6,7 @@ plugins {
 }
 
 war {
-	archiveName 'PurchaseOrderService'
+	archiveName 'FuzeWebsocketDB'
     }
 
 group = 'com.fuze.po'
