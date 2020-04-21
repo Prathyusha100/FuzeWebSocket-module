@@ -30,21 +30,21 @@ public class WebsocketDAOController {
 	@Autowired
 	private WebsocketDAOService websocketDAOService;
 
-	@GetMapping("/poRequestFields")
+	@GetMapping("/siteProjectFieldChanges")
 
-	public ResponseEntity<Map<String, Object>> getSiteProjectFieldChanges() {
+	public ResponseEntity<List<Map<String, Object>>> getSiteProjectFieldChanges() {
 		
-		Map<String, Object>  siteProjectFieldsMap = websocketDAOService.getSiteProjectFieldChanges();
+		List<Map<String, Object>>  siteProjectFieldsMap = websocketDAOService.getSiteProjectFieldChangesJSON();
 				
 		if (siteProjectFieldsMap.isEmpty()) {
 			throw new WebSocketDBResourceNotFoundException("No fields Found.");
 		}
-		return new ResponseEntity<Map<String, Object>>(siteProjectFieldsMap, HttpStatus.OK);
+		return new ResponseEntity<List<Map<String, Object>>>(siteProjectFieldsMap, HttpStatus.OK);
 	}
 	
 	
 
-	@GetMapping("/getLatestPoRequestHistory")
+	@GetMapping("/latestPoRequestHistory")
 
 	public Map<String, Object> getLatestPoRequestHistory() {
 
