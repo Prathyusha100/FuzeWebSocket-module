@@ -24,6 +24,7 @@ dependencies {
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web-services', version: '1.4.0.RELEASE'
 	compile group: 'org.springframework', name: 'spring-oxm', version: '5.2.3.RELEASE'
     compile "com.oracle.ojdbc:ojdbc8:19.3.0.0"
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.19'
     compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
 	compile group: 'commons-io', name: 'commons-io', version: '2.6'
 	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.0.2'

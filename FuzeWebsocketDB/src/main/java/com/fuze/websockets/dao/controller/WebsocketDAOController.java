@@ -16,32 +16,35 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
+import com.fuze.websockets.dao.entity.PORequest;
+import com.fuze.websockets.dao.exception.WebSocketDBResourceNotFoundException;
 import com.fuze.websockets.dao.service.WebsocketDAOService;
+
 
 @RestController
 @RequestMapping("/websockets/dao")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class WebsocketDAOController {
 
-	private static Logger logger = LoggerFactory.getLogger(WebsocketDAOController.class);
-	
 	@Autowired
-
 	private WebsocketDAOService websocketDAOService;
 
+	@GetMapping("/poRequestFields")
 
-
-	@GetMapping(value = "/poRequestFields")
-
-	public Map<String, Object> getSiteProjectFieldChanges() {
-
-		return websocketDAOService.getSiteProjectFieldChanges();
-
+	public ResponseEntity<Map<String, Object>> getSiteProjectFieldChanges() {
+		
+		Map<String, Object>  siteProjectFieldsMap = websocketDAOService.getSiteProjectFieldChanges();
+				
+		if (siteProjectFieldsMap.isEmpty()) {
+			throw new WebSocketDBResourceNotFoundException("No fields Found.");
+		}
+		return new ResponseEntity<Map<String, Object>>(siteProjectFieldsMap, HttpStatus.OK);
 	}
+	
+	
 
-
-
-	@GetMapping(value = "/getLatestPoRequestHistory")
+	@GetMapping("/getLatestPoRequestHistory")
 
 	public Map<String, Object> getLatestPoRequestHistory() {
 

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,8 +12,11 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
+
+import com.fuze.websockets.dao.entity.PORequest;
 import com.fuze.websockets.dao.entity.PORequestHistory;
 import com.fuze.websockets.dao.repository.PORequestHistoryRepository;
+import com.fuze.websockets.dao.repository.PORequestRepository;
 
 /**
  * @author Bhajuram.c
@@ -21,11 +25,11 @@ import com.fuze.websockets.dao.repository.PORequestHistoryRepository;
 @Service
 public class WebsocketDAOService {
 
-	@Autowired
-
 	private static final Logger LOGGER = LogManager.getLogger(WebsocketDAOService.class);
-	
+	@Autowired
 	private PORequestHistoryRepository poRequestHistoryRepository;
+	@Autowired
+	private PORequestRepository poRequestRepository;
     
 	public Map<String, Object> getSiteProjectFieldChanges() {
 
@@ -92,6 +96,20 @@ public class WebsocketDAOService {
 		return response;
 
 	}
+	
+	public void createPORequest(PORequest porequest) {
+		poRequestRepository.save(porequest);
+		
+	}
+	public PORequest getPORequest(int id) {
+		Optional<PORequest> poRequest = poRequestRepository.findById(id);
+		if(poRequest!=null) {
+			return poRequest.get();
+		}
+		
+		return null;
+	}
+		
 	public Map<String, Object> getLatestPoRequestHistory() {
 
 		Map<String, Object> response = new HashMap<String, Object>();

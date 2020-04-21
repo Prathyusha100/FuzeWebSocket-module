@@ -14,7 +14,6 @@ import javax.persistence.JoinColumns;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-
 /**
  * @author Bhajuram.c
  *
