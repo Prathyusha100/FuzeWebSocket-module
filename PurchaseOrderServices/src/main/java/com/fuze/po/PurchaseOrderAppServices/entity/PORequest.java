@@ -1,6 +1,7 @@
 package com.fuze.po.PurchaseOrderAppServices.entity;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -48,7 +49,7 @@ public class PORequest {
 	@Column(name = "last_modified_by")
 	private String lastModifiedBy;
 	@Column(name = "last_modified_date")
-	private Timestamp lastModifiedDate;
+	private Date lastModifiedDate;
 
 	
 	public String getPslc() {
@@ -163,14 +164,11 @@ public class PORequest {
 		this.lastModifiedBy = lastModifiedBy;
 	}
 
-	public Timestamp getLastModifiedDate() {
+	public Date getLastModifiedDate() {
 		return lastModifiedDate;
 	}
 
-	public void setLastModifiedDate(Timestamp lastModifiedDate) {
-		if(lastModifiedDate==null) {
-			lastModifiedDate = new Timestamp(System.currentTimeMillis());
-		}
+	public void setLastModifiedDate(Date lastModifiedDate) {
 		this.lastModifiedDate = lastModifiedDate;
 	}
 

@@ -3,6 +3,7 @@ package com.fuze.po.PurchaseOrderAppServices.service;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +55,7 @@ public class POService {
 		poRequest.setProjectType(requestForm.getProjectType());
 		poRequest.setCustomerProjectType(requestForm.getCustomerProjectType());
 		poRequest.setLastModifiedBy(requestForm.getLastModifiedBy());
-		poRequest.setLastModifiedDate(new Timestamp(System.currentTimeMillis()));
+		poRequest.setLastModifiedDate(Calendar.getInstance().getTime());
 		if(requestForm.getSiteProjectsId()!=null) {
 			poRequest.setSiteProjectsId(requestForm.getSiteProjectsId());
 		}
